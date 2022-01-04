@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="generator" content="Responsive Site Designer 1.5.1419">
+  <title>Browser-beijin -- Trados Plugin Development</title>
+  <link rel="stylesheet" href="{{url_for('static', filename='css/coffeegrinder.min.css')}}">
+  <link rel="stylesheet" href="{{url_for('static', filename='css/wireframe-theme.min.css')}}">
+  <link rel="shortcut icon" type="image/x-icon" href="{{url_for('static', filename='img/favicon.ico')}}" />
+  <script>document.createElement( "picture" );</script>
+  <script src="{{url_for('static', filename='js/picturefill.min.js')}}" class="picturefill" async="async"></script>
+  <link rel="stylesheet" href="{{url_for('static', filename='css/main.css')}}">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+  <style>
+	@media all and (min-width: 960px) {
+	* {
+		font-size: 20px;
+	  }
+	}
+
+	@media all and (max-width: 959px) and (min-width: 600px) {
+	* {
+		font-size: 5vw;
+	  }
+	}
+
+	@media all and (max-width: 599px) and (min-width: 50px) {
+	* {
+		font-size: 6vw;
+	  }
+	}
+	</style>
+</head>
+
+<body>
+  <div class="row full-width-row header">
+    <header class="coffee-span-12">
+      <div class="container header-container">
+        <h1 class="page-heading">Make your company styleguide even more accessible to translators</h1>
+        <p class="paragraph tagline">Pinpoint_StyleGuide Trados Plugin<br>
+        </p>
+      </div>
+    </header>
+  </div>
+  <main class="row">
+    <article class="coffee-span-8 coffee-880-span-8 coffee-549-span-12 coffee-700-span-12">
+      <h1 class="heading-1">We sent the company style guide to the translator, but...</h1>
+	  <p class="paragraph">The problem, in a nutshell, is this:
+	  <img src="{{url_for('static', filename='img/style_guide.jpg')}}">
+	  <p class="paragraph">Translation companies often have thorough style guides, meant to dictate the rules they'd like translators to abide by (my own company has a 24-pager just relating to Japanese-to-English translation).  When requesting translation, the companies distribute such style guides to translators, hoping that the translator will 1) read the style guide and 2) follow the rules therein.  The only problem is, the information relevant to the current translation request in the style guide is <b>far far outweighed</b> by currently non-relevant information.  This is especially true in light of the current state of the translation industry.  That is to say, <b>as their translation memories grow in volume, companies are now making smaller and smaller 'new translation' requests.</b>  It is not uncommon for a translator to be asked to translate only a few sentences.  As in the image above, do you really expect the translator to <em>read & internalize</em> the provided style guide, when the translation request itself is only a few sentences, with a tight deadline?</p>
+	  <p class="paragraph">In my own company, we often ran into problems with the formatting of units (cm mm in. ft. and so on).  Within our 972 word style guide, these 7 words appear: "There should be one space before units."  Although we distribted our style guide with each translation request, the units in the delivered translated text often had no space before them (for example, 3mm, 5cm, and so on).  <em>Clearly, the translators (who were <b>surely</b> reading the style guide, right?) were missing the 7 important words regarding units and spaces.</em>  So, we thought, <span style="color:darkgreen;font-weight:bold">"What if we could embed bits of the style guide, as comments, next to relevant segments?"</span>  That's exactly what is possible with Pinpoint_StyleGuide, the new plugin for Trados Studio 2017 and 2019.</p>
+	  <p class="paragraph">Using Pinpoint_StyleGuide, you can decide on patterns to search for in the source segments, then use those patterns to add comments to your Trados Project Files. For example:
+	  <img src="{{url_for('static', filename='img/mm_pattern.jpg')}}">
+	  <p class="paragraph">The pattern above matches any digit followed by a space, then "mm." On segments that contain this pattern, the comment on the right will be added automatically.  In my own company, we boiled down our 7-page "English to French/Spanish" style guide into <b>23 simple pairs like this</b>, with which we can add specific style-related information as comments to appropriate translation segments <b>only</b></em>.  There is no need, then, to distribute any style guide separately.  All style guide related information is right there in the Trados Project file itself, right where the translator can see it, at the most appropriate time (just before translating the sentence in question).
+	  <p class="paragraph">If you'd like to ensure more fully that translators are actually seeing & using the information in your company style guides, give Pinpoint_StyleGuide a try!  You can download it <b><a href="https://appstore.sdl.com/language/app/pinpoint-styleguide/1071/" target="_blank">here</a></b>, from the SDL Appstore.
+      <div class="rule rule-2">
+        <hr>
+      </div>	  
+    </article>
+	
+	    <div class="coffee-span-4 coffee-549-span-12 coffee-700-span-12">
+      <div class="container nav-container">
+        <h2 class="heading-1">Site Map</h2>
+        <a class="link-text nav-link" href="{{url_for('index')}}">Main Page</a>
+		<a class="link-text nav-link" href="{{url_for('blog')}}">Translation & Programming Blog</a>
+        <a class="link-text nav-link" href="{{url_for('tbtm_align')}}">TBTM_Align</a>
+        <a class="link-text nav-link" href="{{url_for('otf_glossary')}}">On-the-fly Glossary</a>
+        <a class="link-text nav-link" href="{{url_for('iem')}}">Crawl'n Search</a>
+		<a class="link-text nav-link" href="{{url_for('gcwg')}}">GoogleCloud'w Glossary</a>
+		<a class="link-text nav-link" href="{{url_for('ppsg')}}">Pinpoint_StyleGuide</a>
+		<a class="link-text nav-link" href="{{url_for('tmx_to_chart')}}">View and edit TMX files online</a>
+        <div class="rule rule-2">
+          <hr>
+        </div>
+      </div>
+	  <div class="rule">
+        <hr>
+      </div>
+	  </div>
+  </main>
+  <div class="row full-width-row footer">
+    <div class="coffee-span-12">
+      <footer class="subgrid">
+        <div class="row">
+          <div class="coffee-span-3 hidden-column"></div>
+            <div class="coffee-span-9 coffee-880-span-12">
+            <a class="link-text footer-nav" href="{{url_for('index')}}">Main Page</a>
+			<a class="link-text footer-nav" href="{{url_for('blog')}}">Translation & Programming Blog</a>
+            <a class="link-text footer-nav" href="{{url_for('tbtm_align')}}">TBTM_Align</a>
+            <a class="link-text footer-nav" href="{{url_for('otf_glossary')}}">On-the-fly Glossary</a>
+            <a class="link-text footer-nav" href="{{url_for('iem')}}">Crawl'n Search</a>
+			<a class="link-text footer-nav" href="{{url_for('gcwg')}}">GoogleCloud'w Glossary</a>
+			<a class="link-text footer-nav" href="{{url_for('ppsg')}}">Pinpoint_StyleGuide</a>
+			<a class="link-text nav-link" href="{{url_for('tmx_to_chart')}}">View and edit TMX files online</a>
+			<br>Mail:　bb@browser-beijin.com
+          </div>
+        </div>
+        <div class="row">
+          <div class="coffee-span-12">
+            <div class="rule rule-1">
+              <hr>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="coffee-span-3 hidden-column"></div>
+        </div>
+      </footer>
+    </div>
+  </div>
+</body>
+</html>

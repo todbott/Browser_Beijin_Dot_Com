@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="generator" content="Responsive Site Designer 1.5.1419">
+  <title>Browser-beijin -- Trados Plugin Development</title>
+  <link rel="stylesheet" href="{{url_for('static', filename='css/coffeegrinder.min.css')}}">
+  <link rel="stylesheet" href="{{url_for('static', filename='css/wireframe-theme.min.css')}}">
+  <link rel="shortcut icon" type="image/x-icon" href="{{url_for('static', filename='img/favicon.ico')}}" />
+  <script>document.createElement( "picture" );</script>
+  <script src="{{url_for('static', filename='js/picturefill.min.js')}}" class="picturefill" async="async"></script>
+  <link rel="stylesheet" href="{{url_for('static', filename='css/main.css')}}">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+  <style>
+	@media all and (min-width: 960px) {
+	* {
+		font-size: 20px;
+	  }
+	}
+
+	@media all and (max-width: 959px) and (min-width: 600px) {
+	* {
+		font-size: 5vw;
+	  }
+	}
+
+	@media all and (max-width: 599px) and (min-width: 50px) {
+	* {
+		font-size: 6vw;
+	  }
+	}
+	</style>
+</head>
+
+<body>
+  <div class="row full-width-row header">
+    <header class="coffee-span-12">
+      <div class="container header-container">
+        <h1 class="page-heading">Search all your Project Files, all in one click!</h1>
+        <p class="paragraph tagline">Crawl'n Search Trados Plugin<br>
+        </p>
+      </div>
+    </header>
+  </div>
+  <main class="row">
+    <article class="coffee-span-8 coffee-880-span-8 coffee-549-span-12 coffee-700-span-12">
+      <h1 class="heading-1">I feel like we translated that sentence a few years ago...</h1>
+	  <p class="paragraph">Have you ever wanted to search <b>all</b> the Trados Project files on your computer or server, looking for a specific word or sentence?  Trados Studio doesn't have this sort of functionality built-in, so I went and created "Crawl'n Search."  A perfect use-example (and the trigger that led to its creation) is outlined below. 
+	  <br>
+	  <br>My company often gets translation requests from customers, then passes them on to other translation companies (for example, we have no in-house French speakers, so if we get an English ⇒ French translation request, we have to outsource it).  In late 2018, we got a (very very extremely short) English to French translation request.  The content (color information for some kind of circuit board), was as follows:
+	  <br>
+	  <br><b>BLUE    GREEN    RED    BROWN    LED</b>
+	  <br>
+	  <br>I searched all the Translation Memories, but could not find a match.  In the end, we had to send these 5 words as a translation request to an outside company, and ended up paying about $40 (the minimum charge).
+	  <p class="paragraph">As I mentioned, the words could not be found in any of our translation memories.  However, in addition to the translation memories (which we update regularly), the company also has hundreds of Trados Project files from years and years ago, the segments of which have never been imported into translation memories.  I probably could have found "BLUE GREEN RED BROWN LED" somewhere within those hundreds of Trados Project files, had I the time to open each one and check the source and target segments.
+	  <p class="paragraph">Thinking of this experience, I thought "Wouldn't it be nice to have a Trados Plugin that could just crawl through this directory, open the Project file, get the source and target segments associated with each language pair in that project, then search them for particular words or phrases?"
+	  <br>
+	  <br><b>Crawl'n Search</b> does exactly this.  It will crawl through all the sub-directories of a chosen directory and find each and every Trados Project file.  If it finds words or phrases you designate within that Project file, they will be displayed, along with the Project filename and source and target language information.
+	  <br>
+	  <br>You can download it <b><a href="https://appstore.sdl.com/language/app/crawl-n-search/1011/" target="_blank">here</a></b>, from the SDL Appstore.
+	  <br>
+	  <br>Before you send out a 5-word translation request (to the tune of $40), search your past Project files with <b>Crawl'n Search</b>--you just might find a sentence or phrase you can use!  If you have any questions or problems, feel free to send an email to <b>bb@browser-beijin.com</b>.
+        <div class="rule rule-2">
+          <hr>
+        </div>
+	  <br>
+        <div class="rule rule-2">
+          <hr>
+        </div>
+	  <br>
+		<hr>
+       <div class="rule rule-2">
+          <hr>
+        </div>
+      </div>
+    </article>
+	
+	    <div class="coffee-span-4 coffee-549-span-12 coffee-700-span-12">
+      <div class="container nav-container">
+        <h2 class="heading-1">Site Map</h2>
+        <a class="link-text nav-link" href="{{url_for('index')}}">Main Page</a>
+		<a class="link-text nav-link" href="{{url_for('blog')}}">Translation & Programming Blog</a>
+        <a class="link-text nav-link" href="{{url_for('tbtm_align')}}">TBTM_Align</a>
+        <a class="link-text nav-link" href="{{url_for('otf_glossary')}}">On-the-fly Glossary</a>
+        <a class="link-text nav-link" href="{{url_for('iem')}}">Crawl'n Search</a>
+		<a class="link-text nav-link" href="{{url_for('gcwg')}}">GoogleCloud'w Glossary</a>
+		<a class="link-text nav-link" href="{{url_for('ppsg')}}">Pinpoint_StyleGuide</a>
+		<a class="link-text nav-link" href="{{url_for('tmx_to_chart')}}">View and edit TMX files online</a>
+        <div class="rule rule-2">
+          <hr>
+        </div>
+      </div>
+	  <div class="rule">
+        <hr>
+      </div>
+	  </div>
+  </main>
+  <div class="row full-width-row footer">
+    <div class="coffee-span-12">
+      <footer class="subgrid">
+        <div class="row">
+          <div class="coffee-span-3 hidden-column"></div>
+            <div class="coffee-span-9 coffee-880-span-12">
+            <a class="link-text footer-nav" href="{{url_for('index')}}">Main Page</a>
+			<a class="link-text footer-nav" href="{{url_for('blog')}}">Translation & Programming Blog</a>
+            <a class="link-text footer-nav" href="{{url_for('tbtm_align')}}">TBTM_Align</a>
+            <a class="link-text footer-nav" href="{{url_for('otf_glossary')}}">On-the-fly Glossary</a>
+            <a class="link-text footer-nav" href="{{url_for('iem')}}">Crawl'n Search</a>
+			<a class="link-text footer-nav" href="{{url_for('gcwg')}}">GoogleCloud'w Glossary</a>
+			<a class="link-text footer-nav" href="{{url_for('ppsg')}}">Pinpoint_StyleGuide</a>
+			<a class="link-text nav-link" href="{{url_for('tmx_to_chart')}}">View and edit TMX files online</a>
+			<br>Mail:　bb@browser-beijin.com
+          </div>
+        </div>
+        <div class="row">
+          <div class="coffee-span-12">
+            <div class="rule rule-1">
+              <hr>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="coffee-span-3 hidden-column"></div>
+        </div>
+      </footer>
+    </div>
+  </div>
+</body>
+</html>

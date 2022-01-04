@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="generator" content="Responsive Site Designer 1.5.1419">
+  <title>Browser-beijin -- Trados Plugin Development</title>
+  <link rel="stylesheet" href="{{url_for('static', filename='css/coffeegrinder.min.css')}}">
+  <link rel="stylesheet" href="{{url_for('static', filename='css/wireframe-theme.min.css')}}">
+  <link rel="shortcut icon" type="image/x-icon" href="{{url_for('static', filename='img/favicon.ico')}}" />
+  <script>document.createElement( "picture" );</script>
+  <script src="{{url_for('static', filename='js/picturefill.min.js')}}" class="picturefill" async="async"></script>
+  <link rel="stylesheet" href="{{url_for('static', filename='css/main.css')}}">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+  <style>
+	@media all and (min-width: 960px) {
+	* {
+		font-size: 20px;
+	  }
+	}
+
+	@media all and (max-width: 959px) and (min-width: 600px) {
+	* {
+		font-size: 5vw;
+	  }
+	}
+
+	@media all and (max-width: 599px) and (min-width: 50px) {
+	* {
+		font-size: 6vw;
+	  }
+	}
+	</style>
+</head>
+
+<body>
+  <div class="row full-width-row header">
+    <header class="coffee-span-12">
+      <div class="container header-container">
+        <h1 class="page-heading">Make an on-the-fly glossary before you begin!</h1>
+        <p class="paragraph tagline">On-the-fly (OTF) Glossary Tool<br>
+        </p>
+      </div>
+    </header>
+  </div>
+  <main class="row">
+    <article class="coffee-span-8 coffee-880-span-8 coffee-549-span-12 coffee-700-span-12">
+      <h1 class="heading-1">Had I known the word 'wiring port' appears 158 times...</h1>
+	  <p class="paragraph">How many times have you had this experience?
+	  <img src="{{url_for('static', filename='img/glossary_english.jpg')}}">
+	  <p class="paragraph">As a translator, you are often asked to translate multi-page documents with no glossary provided.  In my own translation work, I have run into this situation countless times.  I start translating, then, about 20 or 30 segments in, here comes the word "配線口."  So, I think, <i>I'll use the English word <b>wiring outlet</b> for this term.</i>  Then, over the next few days, as I'm translating thousands of segments, 配線口 appears over and over.  I have to start scrolling up and down and up and down, trying to find past occurences of 配線口 in all the xliff files, and trying to remember which English term I used for 配線口.  Was it <b>wire port? wiring port? wire outlet? power line hole?</b>... The variations are endless, and it's super hard to remember (especially after days and days of translating).
+	  <p class="paragraph">Wouldn't it be nice to grab the most commonly-occuring words & phrases directly from the project files and add them to the project as a glossary <i>before</i> beginning translation work?  That is exactly what's possible with the new Trados Plugin <b>OTF_Glossary</b>.
+	  <br>
+	  <br>After creating a Trados Project, you simply select it in the Projects list, then click on the plugin.  Words and phrases that appear in the project between 0.1% and 1% of the time are pulled out and displayed (the cutoff percentages can be modified if you like).  You can select words and phrases that you would like to add to the glossary (for example 配線口), add a target term (for example 'wiring outlet'), then add the term pair to the glossary.  In the end, the glossary will be added directly to the Trados Project in question.
+	  <br>
+	  <br>You can download it <b><a href="https://appstore.sdl.com/language/app/on-the-fly-glossary/1010/" target="_blank">here</a></b>, from the SDL Appstore.
+	  <br>
+	  <br>I hope this tool will be of help to you, thank you for checking it out.  If you have any questions or problems, feel free to send an email to <b>bb@browser-beijin.com</b>.
+        <div class="rule rule-2">
+          <hr>
+        </div>
+	  <br>
+        <div class="rule rule-2">
+          <hr>
+        </div>
+	  <br>
+		<hr>
+       <div class="rule rule-2">
+          <hr>
+        </div>
+      </div>
+    </article>
+
+    <div class="coffee-span-4 coffee-549-span-12 coffee-700-span-12">
+      <div class="container nav-container">
+        <h2 class="heading-1">Site Map</h2>
+        <a class="link-text nav-link" href="{{url_for('index')}}">Main Page</a>
+		<a class="link-text nav-link" href="{{url_for('blog')}}">Translation & Programming Blog</a>
+        <a class="link-text nav-link" href="{{url_for('tbtm_align')}}">TBTM_Align</a>
+        <a class="link-text nav-link" href="{{url_for('otf_glossary')}}">On-the-fly Glossary</a>
+        <a class="link-text nav-link" href="{{url_for('iem')}}">Crawl'n Search</a>
+		<a class="link-text nav-link" href="{{url_for('gcwg')}}">GoogleCloud'w Glossary</a>
+		<a class="link-text nav-link" href="{{url_for('ppsg')}}">Pinpoint_StyleGuide</a>
+		<a class="link-text nav-link" href="{{url_for('tmx_to_chart')}}">View and edit TMX files online</a>
+        <div class="rule rule-2">
+          <hr>
+        </div>
+      </div>
+	  <div class="rule">
+        <hr>
+      </div>
+	  </div>
+  </main>
+  <div class="row full-width-row footer">
+    <div class="coffee-span-12">
+      <footer class="subgrid">
+        <div class="row">
+          <div class="coffee-span-3 hidden-column"></div>
+            <div class="coffee-span-9 coffee-880-span-12">
+            <a class="link-text footer-nav" href="{{url_for('index')}}">Main Page</a>
+			<a class="link-text footer-nav" href="{{url_for('blog')}}">Translation & Programming Blog</a>
+            <a class="link-text footer-nav" href="{{url_for('tbtm_align')}}">TBTM_Align</a>
+            <a class="link-text footer-nav" href="{{url_for('otf_glossary')}}">On-the-fly Glossary</a>
+            <a class="link-text footer-nav" href="{{url_for('iem')}}">Crawl'n Search</a>
+			<a class="link-text footer-nav" href="{{url_for('gcwg')}}">GoogleCloud'w Glossary</a>
+			<a class="link-text footer-nav" href="{{url_for('ppsg')}}">Pinpoint_StyleGuide</a>
+			<a class="link-text nav-link" href="{{url_for('tmx_to_chart')}}">View and edit TMX files online</a>
+			<br>Mail:　bb@browser-beijin.com
+          </div>
+        </div>
+        <div class="row">
+          <div class="coffee-span-12">
+            <div class="rule rule-1">
+              <hr>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="coffee-span-3 hidden-column"></div>
+        </div>
+      </footer>
+    </div>
+  </div>
+</body>
+</html>

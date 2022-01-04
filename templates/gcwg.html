@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="generator" content="Responsive Site Designer 1.5.1419">
+  <title>Browser-beijin -- Trados Plugin Development</title>
+  <link rel="stylesheet" href="{{url_for('static', filename='css/coffeegrinder.min.css')}}">
+  <link rel="stylesheet" href="{{url_for('static', filename='css/wireframe-theme.min.css')}}">
+  <link rel="shortcut icon" type="image/x-icon" href="{{url_for('static', filename='img/favicon.ico')}}" />
+  <script>document.createElement( "picture" );</script>
+  <script src="{{url_for('static', filename='js/picturefill.min.js')}}" class="picturefill" async="async"></script>
+  <link rel="stylesheet" href="{{url_for('static', filename='css/main.css')}}">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+  <style>
+	@media all and (min-width: 960px) {
+	* {
+		font-size: 20px;
+	  }
+	}
+
+	@media all and (max-width: 959px) and (min-width: 600px) {
+	* {
+		font-size: 5vw;
+	  }
+	}
+
+	@media all and (max-width: 599px) and (min-width: 50px) {
+	* {
+		font-size: 6vw;
+	  }
+	}
+	</style>
+</head>
+
+<body>
+  <div class="row full-width-row header">
+    <header class="coffee-span-12">
+      <div class="container header-container">
+        <h1 class="page-heading">Use Google Translate with a glossary!</h1>
+        <p class="paragraph tagline">GoogleCloud'n Glossary Trados Plugin<br>
+        </p>
+      </div>
+    </header>
+  </div>
+  <main class="row">
+    <article class="coffee-span-8 coffee-880-span-8 coffee-549-span-12 coffee-700-span-12">
+      <h1 class="heading-1">Google Translate cuts down on translation time, but the terms...</h1>
+	  <p class="paragraph"><b>This plugin has been approved, and is now available for Trados Studio 2017, 2019 and 2021 on the SDL Appstore <a href="https://appstore.sdl.com/language/app/googlecloud-n-glossary/1069/" target="_blank">here</a>.</b>  Thank you for the approval, SDL!</p>
+	  <div class="rule">
+        <hr>
+      </div>
+	  <p class="paragraph">Google Translate is getting better and better with each passing month and year.  I recently used the "Pre-translate files with Google Cloud" option from within Trados 2017 to batch-translate a large project (Japanese to English).  When the results came back, I was frankly amazed--the translations were near human-level, so I simply had to post-edit the translations (fixing some places here and there), before submitting them to the customer.  When engaging in this post-editing work, the main thing I noticed was the variation in terms/vocabulary used by Google Translate.  Most of the sentences were gramatically perfect, the main issue was with vocabulary inconsistency.  For example, the customer wanted to use the term "remote controller," but Google Translate chose the term "remote control."  Also, the verb "press" (押す) sometimes came out as <i>press</i>, but sometimes as <i>push</i>.  Other than such vocabulary irregularities, Google Translate worked great for that particular project.</p>
+	  <p class="paragraph">That got me thinking, "Wouldn't it be great if you could supply a glossary (in Trados *.sdltb Termbase format) to Google Translate, and receive target translations that use terms consistently?"  Well, now you can, with <b>GoogleCloud'n Glossary!</b></p>
+	  <p class="paragraph">Using Google Cloud'n Glossary, you simply add "GoogleCloud'n Glossary Trados Plugin" as a Machine Translation provider to your Trados project, and you're good to go.  Source segments will be translated using the Google API, and a glossary of your choosing.  Simply choose a Termbase file from your computer, upload it to Google Cloud Storage (from within the plugin), and it will be used during translation.  No more term irregularities!</p>
+	  <p class="paragraph">You can do all of the above using the <b>free version</b> of the plugin.  <b>If you purchase a product key ($25 USD, from the link within the plugin itself), you can also train custom translation models using the sentence pairs in existing translation memories</b>. <i>(NOTE: Model training is carried out in the cloud, at the hourly rates listed <a href="https://cloud.google.com/translate/automl/pricing" target="_blank">here</a>.  In a nutshell, training even a small model may cost around $100 USD or more.  Model training fees such as this, as well as actual per-character translation fees--incurred when translating with a custom model or the standard Google NMT model--will be charged directly to your Google Cloud Platform account.  Training/translation fees are separate and not included in the one-time $25 product key fee).</i></p>
+	  <h1 class="heading-1">Setting up your Google Cloud Platform account for use with the plugin</h1>
+	  <p class="paragraph">The plugin uses credentials (in the form of a *.json file) saved on your computer to carry out translation, so before using the plugin, you must:</p>
+	  1. Enable the "Cloud Translation API", "Cloud AutoML API", and "Cloud Storage API" in your Google Cloud Platform account.
+	  <br>2. Create a "Service account," and assign it four special permissions
+	  <br>3. Generate and download the *.json file
+	  <p class="paragraph">The entire process is shown in the following 4-minute video (<b>Be sure to turn on closed captions, as the video has no audio narration</b>):</p>
+        <div class="rule rule-2">
+          <hr>
+        </div>
+		<br><iframe width="560" height="315" src="https://www.youtube.com/embed/z65ieC9T4rw" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        <div class="rule rule-2">
+          <hr>
+        </div>
+	  <p class="paragraph">The *.json file created in the final step of the above video will be downloaded to your computer, and saved in the "Downloads" folder associated with your web browser, most likely.  When you start the plugin from Trados, you simply have to find that file on your computer and select it.  The plugin will use the credentials contained inside to link up with your Google Cloud Platform account, allowing you to train & use custom models (or just use the standard Google NMT model), as well as create and use glossaries during translation.</p>
+      <div class="rule rule-2">
+        <hr>
+      </div>	  
+	  <br> 
+	  <p class="paragraph">I hope this tool will be of help to you, thank you for checking it out.  If you have any questions or problems, feel free to send an email to <b>bb@browser-beijin.com</b>.</p>
+    </article>
+	
+	    <div class="coffee-span-4 coffee-549-span-12 coffee-700-span-12">
+      <div class="container nav-container">
+        <h2 class="heading-1">Site Map</h2>
+        <a class="link-text nav-link" href="{{url_for('index')}}">Main Page</a>
+		<a class="link-text nav-link" href="{{url_for('blog')}}">Translation & Programming Blog</a>
+        <a class="link-text nav-link" href="{{url_for('tbtm_align')}}">TBTM_Align</a>
+        <a class="link-text nav-link" href="{{url_for('otf_glossary')}}">On-the-fly Glossary</a>
+        <a class="link-text nav-link" href="{{url_for('iem')}}">Crawl'n Search</a>
+		<a class="link-text nav-link" href="{{url_for('gcwg')}}">GoogleCloud'w Glossary</a>
+		<a class="link-text nav-link" href="{{url_for('ppsg')}}">Pinpoint_StyleGuide</a>
+		<a class="link-text nav-link" href="{{url_for('tmx_to_chart')}}">View and edit TMX files online</a>
+        <div class="rule rule-2">
+          <hr>
+        </div>
+      </div>
+	  <div class="rule">
+        <hr>
+      </div>
+	  </div>
+  </main>
+  <div class="row full-width-row footer">
+    <div class="coffee-span-12">
+      <footer class="subgrid">
+        <div class="row">
+          <div class="coffee-span-3 hidden-column"></div>
+            <div class="coffee-span-9 coffee-880-span-12">
+            <a class="link-text footer-nav" href="{{url_for('index')}}">Main Page</a>
+			<a class="link-text footer-nav" href="{{url_for('blog')}}">Translation & Programming Blog</a>
+            <a class="link-text footer-nav" href="{{url_for('tbtm_align')}}">TBTM_Align</a>
+            <a class="link-text footer-nav" href="{{url_for('otf_glossary')}}">On-the-fly Glossary</a>
+            <a class="link-text footer-nav" href="{{url_for('iem')}}">Crawl'n Search</a>
+			<a class="link-text footer-nav" href="{{url_for('gcwg')}}">GoogleCloud'w Glossary</a>
+			<a class="link-text footer-nav" href="{{url_for('ppsg')}}">Pinpoint_StyleGuide</a>
+			<a class="link-text nav-link" href="{{url_for('tmx_to_chart')}}">View and edit TMX files online</a>
+			<br>Mail:　bb@browser-beijin.com
+          </div>
+        </div>
+        <div class="row">
+          <div class="coffee-span-12">
+            <div class="rule rule-1">
+              <hr>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="coffee-span-3 hidden-column"></div>
+        </div>
+      </footer>
+    </div>
+  </div>
+</body>
+</html>

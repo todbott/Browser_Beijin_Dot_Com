@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Developing affordable Trados Studio Plugins for Freelancers and Corporations">
+  <meta name="keywords" content="Trados Studio 2017, Plugin, Add-in, Termbase Management, Glossary, Trados Glossary, make a translation glossary, SDL Plugins">
+  <meta name="generator" content="Responsive Site Designer 1.5.1419">
+  <title>Browser-beijin -- Trados Plugin Development</title>
+  <link rel="stylesheet" href="{{url_for('static', filename='css/coffeegrinder.min.css')}}">
+  <link rel="stylesheet" href="{{url_for('static', filename='css/wireframe-theme.min.css')}}">
+  <link rel="shortcut icon" type="image/x-icon" href="{{url_for('static', filename='img/favicon.ico')}}" />
+  <script>document.createElement( "picture" );</script>
+  <script src="{{url_for('static', filename='js/picturefill.min.js')}}" class="picturefill" async="async"></script>
+  <link rel="stylesheet" href="{{url_for('static', filename='css/main.css')}}">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+  <style>
+	@media all and (min-width: 960px) {
+	* {
+		font-size: 20px;
+	  }
+	}
+
+	@media all and (max-width: 959px) and (min-width: 600px) {
+	* {
+		font-size: 5vw;
+	  }
+	}
+
+	@media all and (max-width: 599px) and (min-width: 50px) {
+	* {
+		font-size: 6vw;
+	  }
+	}
+	</style>
+</head>
+
+<body>
+  <main class="row">
+    <article class="coffee-span-8 coffee-880-span-8 coffee-549-span-12 coffee-700-span-12">
+      <h1 class="heading-1">Trados Plugin Development for Freelancers and Corporations</h1>
+	  <p class="paragraph">Trados Studio translation plugins to <b>eliminate translation errors, speed up your workflow, and reduce translation-related costs.</b>
+	  <br>
+	  <br><u><b>Eliminate Errors</b> with TBTM_Align</u>: Verify that the term pairs in your Termbases are actually present in your Translation Memories.  If term-misalignments exists, fix them in realtime. 
+	  <br>
+	  <br><u><b>Speed up your workflow</b> with On-the-fly Glossary</u>: Analyze the contents of your Trados Project file, finding the most commonly-occuring words and phrases.  Then, make a termbase including those phrases and add it to your Project before beginning translation.
+	  <br>
+	  <br><u><b>Reduce costs</b> with Crawl'n Search</u>: Search all the Project files on your computer or server to find source and target segments that contain specific words or phrases.
+	  <br>
+	  <br><u><b>Automate translation more reliably</b> with GoogleCloud'w Glossary</u>: Use the world-famous Google Translation API from directly within Trados, and supply a termbase to make sure the target translations come out in-line with your glossary.
+	  <br>
+	  <br><u><b>Make your style guide more visible</b> with Pinpoint_StyleGuide</u>: Find specific source sentences to which your company style guide relates, then add comments <b>only to those segments</b>.
+	  <br>
+	  <br>Check out the links to the left or below, and thank you for visiting!</p>
+	  <div class="rule rule-2">
+          <hr>
+        </div>
+    </article>
+    <div class="coffee-span-4 coffee-549-span-12 coffee-700-span-12">
+      <div class="container nav-container">
+        <h2 class="heading-1">Site Map</h2>
+        <a class="link-text nav-link" href="{{url_for('index')}}">Main Page</a>
+		<a class="link-text nav-link" href="{{url_for('blog')}}">Translation & Programming Blog</a>
+        <a class="link-text nav-link" href="{{url_for('tbtm_align')}}">TBTM_Align</a>
+        <a class="link-text nav-link" href="{{url_for('otf_glossary')}}">On-the-fly Glossary</a>
+        <a class="link-text nav-link" href="{{url_for('iem')}}">Crawl'n Search</a>
+		<a class="link-text nav-link" href="{{url_for('gcwg')}}">GoogleCloud'w Glossary</a>
+		<a class="link-text nav-link" href="{{url_for('ppsg')}}">Pinpoint_StyleGuide</a>
+		<a class="link-text nav-link" href="{{url_for('tmx_to_chart')}}">View and edit TMX files online</a>
+        <div class="rule rule-2">
+          <hr>
+        </div>
+      </div>
+	  <div class="rule">
+        <hr>
+      </div>
+	  </div>
+  </main>
+  <div class="row full-width-row footer">
+    <div class="coffee-span-12">
+      <footer class="subgrid">
+        <div class="row">
+          <div class="coffee-span-3 hidden-column"></div>
+            <div class="coffee-span-9 coffee-880-span-12">
+            <a class="link-text footer-nav" href="{{url_for('index')}}">Main Page</a>
+			<a class="link-text footer-nav" href="{{url_for('blog')}}">Translation & Programming Blog</a>
+            <a class="link-text footer-nav" href="{{url_for('tbtm_align')}}">TBTM_Align</a>
+            <a class="link-text footer-nav" href="{{url_for('otf_glossary')}}">On-the-fly Glossary</a>
+            <a class="link-text footer-nav" href="{{url_for('iem')}}">Crawl'n Search</a>
+			<a class="link-text footer-nav" href="{{url_for('gcwg')}}">GoogleCloud'w Glossary</a>
+			<a class="link-text footer-nav" href="{{url_for('ppsg')}}">Pinpoint_StyleGuide</a>
+			<a class="link-text nav-link" href="{{url_for('tmx_to_chart')}}">View and edit TMX files online</a>
+			<br>Mail:　bb@browser-beijin.com
+          </div>
+        </div>
+        <div class="row">
+          <div class="coffee-span-12">
+            <div class="rule rule-1">
+              <hr>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="coffee-span-3 hidden-column"></div>
+        </div>
+      </footer>
+    </div>
+  </div>
+</body>
+</html>

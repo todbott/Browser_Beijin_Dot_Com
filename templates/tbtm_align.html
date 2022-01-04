@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="generator" content="Responsive Site Designer 1.5.1419">
+  <title>Browser-beijin -- Trados Plugin Development</title>
+  <link rel="stylesheet" href="{{url_for('static', filename='css/coffeegrinder.min.css')}}">
+  <link rel="stylesheet" href="{{url_for('static', filename='css/wireframe-theme.min.css')}}">
+  <link rel="shortcut icon" type="image/x-icon" href="{{url_for('static', filename='img/favicon.ico')}}" />
+  <script>document.createElement( "picture" );</script>
+  <script src="{{url_for('static', filename='js/picturefill.min.js')}}" class="picturefill" async="async"></script>
+  <link rel="stylesheet" href="{{url_for('static', filename='css/main.css')}}">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+  <style>
+	@media all and (min-width: 960px) {
+	* {
+		font-size: 20px;
+	  }
+	}
+
+	@media all and (max-width: 959px) and (min-width: 600px) {
+	* {
+		font-size: 5vw;
+	  }
+	}
+
+	@media all and (max-width: 599px) and (min-width: 50px) {
+	* {
+		font-size: 6vw;
+	  }
+	}
+	</style>
+</head>
+
+<body>
+  <div class="row full-width-row header">
+    <header class="coffee-span-12">
+      <div class="container header-container">
+        <h1 class="page-heading">Is that Translation Memory from long ago actually in-line with the current Termbase？</h1>
+        <p class="paragraph tagline">TBTM_Align<br>
+        </p>
+      </div>
+    </header>
+  </div>
+  <main class="row">
+    <article class="coffee-span-8 coffee-880-span-8 coffee-549-span-12 coffee-700-span-12">
+      <h1 class="heading-1">It's easy to update a Termbase, but how about that Translation Memory?</h1>
+	  <p class="paragraph">Have you ever had this kind of experience?
+	  <img src="{{url_for('static', filename='img/koshin_english.jpg')}}">
+	  <p class="paragraph">Trados Studio is a great tool (I personally use Trados Studio 2017 currently). While it is convenient, it has very few built-in functions for Translation Memory maintenance.  
+	  As in the situation above, whenever there is a change to your company Termbase, it's necessary to update your Translation Memories by hand, using the "Find and Replace" function available within Trados Studio. 
+	  My company faced a situation in late 2018 that would have been almost impossible to work through using this simple "Find and Replace" method of updating Translation Memories.  This situation was the reason for the development of the "TBTM_Align" Trados Studio Plugin, and I will outline it below.
+	  <p class="paragraph">My company had worked for many years with one main client, and built up Translation Memories filled with tens of thousands of sentence pairs in multiple languages.  In late 2018, that client suddenly let us know that they had created an official company glossary, and all translation done in the future should be aligned with that glossary.
+	  <br>
+	  <br>The problem was, we had built up our Translation Memories over many years, without using any special glossary.  Therefore, the translation memories were full of term variations.  As an example, in our JP to EN Translation Memory, we had the following variation:
+	  <br>[JP] 
+	  <br>固定具を取り付けてください
+	  <br>
+	  <br>[EN] 
+	  <br>"Install the securing bracket"
+	  <br>"Install the clamp"
+	  <br>"Install the wire retainer"
+	  <br>"Install the retainer"
+	  <p class="paragraph">In the client's new glossary, the <b>only</b> English term for "固定具" was "securing bracket," so we were faced with the task of 
+	  <br>
+	  <br>1) searching the JP to EN Translation Memory for the term '固定具', 
+	  <br>2) making sure the corresponding English sentence contained the word 'securing bracket,' and 
+	  <br>3) editing the English sentence if it contained a different term.  
+	  <br>
+	  <br>Because the client's new glossary contained hundreds of terms, and we had Translation Memories in multiple languages containing tens of thousands of sentence pairs, this sort of "search --> confirm --> edit" process would have taken dozens or hundreds of hours, if done by hand.
+	  <br>
+	  <br>However, owing to the development of "TB-TM Align," it was possible to update all our Translation Memories to be in-line with the new glossary within a matter of hours.
+	  <br>
+	  <br>I hope that "TB-TM Align" will be able to assist you in a similar fashion if you have an old TM that you'd like to bring in-line with a new glossary.  It's also great as a check-tool, just to make sure that your TMs are in fact aligned with your glossaries.  You can download it <b><a href="https://appstore.sdl.com/language/app/tbtm-align/1001/" target="_blank">here</a></b>, from the SDL Appstore.
+	  <br>
+	  <br>Depending on the structure of the Translation Memories and Termbases you use with it, there is a possibility that errors / bugs may occur (for example, if the languages contained in your Termbase do not have Language Labels attached).  If you have any problems, feel free to drop me a line at <b>bb@browser-beijin.com</b>.
+        <div class="rule rule-2">
+          <hr>
+        </div>
+	  <br>
+        <div class="rule rule-2">
+          <hr>
+        </div>
+	  <br>
+		<hr>
+       <div class="rule rule-2">
+          <hr>
+        </div>
+      </div>
+    </article>
+
+
+    <div class="coffee-span-4 coffee-549-span-12 coffee-700-span-12">
+      <div class="container nav-container">
+        <h2 class="heading-1">Site Map</h2>
+        <a class="link-text nav-link" href="{{url_for('index')}}">Main Page</a>
+		<a class="link-text nav-link" href="{{url_for('blog')}}">Translation & Programming Blog</a>
+        <a class="link-text nav-link" href="{{url_for('tbtm_align')}}">TBTM_Align</a>
+        <a class="link-text nav-link" href="{{url_for('otf_glossary')}}">On-the-fly Glossary</a>
+        <a class="link-text nav-link" href="{{url_for('iem')}}">Crawl'n Search</a>
+		<a class="link-text nav-link" href="{{url_for('gcwg')}}">GoogleCloud'w Glossary</a>
+		<a class="link-text nav-link" href="{{url_for('ppsg')}}">Pinpoint_StyleGuide</a>
+		<a class="link-text nav-link" href="{{url_for('tmx_to_chart')}}">View and edit TMX files online</a>
+        <div class="rule rule-2">
+          <hr>
+        </div>
+      </div>
+	  <div class="rule">
+        <hr>
+      </div>
+	  </div>
+  </main>
+  <div class="row full-width-row footer">
+    <div class="coffee-span-12">
+      <footer class="subgrid">
+        <div class="row">
+          <div class="coffee-span-3 hidden-column"></div>
+            <div class="coffee-span-9 coffee-880-span-12">
+            <a class="link-text footer-nav" href="{{url_for('index')}}">Main Page</a>
+			<a class="link-text footer-nav" href="{{url_for('blog')}}">Translation & Programming Blog</a>
+            <a class="link-text footer-nav" href="{{url_for('tbtm_align')}}">TBTM_Align</a>
+            <a class="link-text footer-nav" href="{{url_for('otf_glossary')}}">On-the-fly Glossary</a>
+            <a class="link-text footer-nav" href="{{url_for('iem')}}">Crawl'n Search</a>
+			<a class="link-text footer-nav" href="{{url_for('gcwg')}}">GoogleCloud'w Glossary</a>
+			<a class="link-text footer-nav" href="{{url_for('ppsg')}}">Pinpoint_StyleGuide</a>
+			<a class="link-text nav-link" href="{{url_for('tmx_to_chart')}}">View and edit TMX files online</a>
+			<br>Mail:　bb@browser-beijin.com
+          </div>
+        </div>
+        <div class="row">
+          <div class="coffee-span-12">
+            <div class="rule rule-1">
+              <hr>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="coffee-span-3 hidden-column"></div>
+        </div>
+      </footer>
+    </div>
+  </div>
+</body>
+</html>

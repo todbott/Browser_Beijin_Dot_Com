@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="generator" content="Responsive Site Designer 1.5.1419">
+  <title>Browser-beijin -- Trados Plugin Development</title>
+  <link rel="stylesheet" href="{{url_for('static', filename='css/coffeegrinder.min.css')}}">
+  <link rel="stylesheet" href="{{url_for('static', filename='css/wireframe-theme.min.css')}}">
+  <link rel="shortcut icon" type="image/x-icon" href="{{url_for('static', filename='img/favicon.ico')}}" />
+  <script>document.createElement( "picture" );</script>
+  <script src="{{url_for('static', filename='js/picturefill.min.js')}}" class="picturefill" async="async"></script>
+  <link rel="stylesheet" href="{{url_for('static', filename='css/main.css')}}">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+  <script type="text/javascript" >
+	$(document).ready(function() {
+	
+		$(".post").hide();
+		$("#9012020_text").show();
+	
+		$('#9012020').click( function() { $(".post").hide(); $("#9012020_text").show();  });
+		$('#5202020').click( function() { $(".post").hide(); $("#5202020_text").show();  });
+		$('#3202020').click( function() { $(".post").hide(); $("#3202020_text").show();  });
+		$('#362020').click( function() { $(".post").hide(); $("#362020_text").show();  });
+		$('#2192020').click( function() { $(".post").hide(); $("#2192020_text").show();  });
+		$('#262020').click( function() { $(".post").hide(); $("#262020_text").show();  });
+		$('#242020').click( function() { $(".post").hide(); $("#242020_text").show();  });
+		$('#1252020').click( function() { $(".post").hide(); $("#1252020_text").show();  });
+		
+		
+	
+	
+	}); </script>
+  <style>
+	@media all and (min-width: 960px) {
+	* {
+		font-size: 20px;
+	  }
+	}
+
+	@media all and (max-width: 959px) and (min-width: 600px) {
+	* {
+		font-size: 5vw;
+	  }
+	}
+
+	@media all and (max-width: 599px) and (min-width: 50px) {
+	* {
+		font-size: 6vw;
+	  }
+	}
+	</style>
+</head>
+
+<body>
+  <div class="row full-width-row header">
+    <header class="coffee-span-12">
+      <div class="container header-container">
+        <h1 class="page-heading">Browser-beijin Blog!</h1>
+        <p class="paragraph tagline">Translation and programming...<br>
+        </em>
+      </div>
+    </header>
+  </div>
+  <main class="row">
+	  <article class="coffee-span-8 coffee-880-span-8 coffee-549-span-12 coffee-700-span-12">
+	  
+	  <div class="post" id="9012020_text">
+		<h1 class="heading-1">GoogleCloud'n Glossary in the Appstore!</h1>
+			<h2 class="heading-2">September 1st, 2020</h2>
+				<p class="paragraph">Just posting an update here, letting you know that <em>GoogleCloud'n Glossary is now available for Trados Studio 2017, 2019 and 2021</em> on the SDL Appstore <a href="https://appstore.sdl.com/language/app/googlecloud-n-glossary/1069/" target="_blank">here</a>.  I'm still using it in my personal work as a translator, and it's saving immense amounts of post-editing time (as the terms in my glossary are accurately reflected in the machine translation results from Google).  Please download it and give it a try--it's free, unless you want to train and use custom translation models (not just the standard Google NMT model).</p>
+		<br>
+	  </div>
+	  
+	  
+	  
+	  <div class="post" id="5202020_text">
+		<h1 class="heading-1">GoogleCloud'n Glossary Update</h1>
+			<h2 class="heading-2">May 20th, 2020</h2>
+				<p class="paragraph">So, from late 2019 to early 2020, I developed and released (via this site) the <a href="{{url_for('gcwg')}}" target="_blank">GoogleCloud'n Glossary</a> plugin for Trados Studio 2017 and 2019.  It's a plugin with which you can use the Google Translate API to translate sentences within Trados, <em>while ensuring that the terms used in the translated sentences follow the terminology in a glossary (Termbase) of your choosing</em>. You can thus control the terminology used during machine translation, and as a result, cut down on time spent post-editing.  Since coming up with a working version of the plugin in late 2019, I have used it in my own work dozens of times, and it's increased the quality of the translation results from Google immensely (and thus saved me proofreading time).</p>
+				<p class="paragraph">As for the inner workings of the plugin, it basically reads all the text from the *.sdlxliff files in a user's project, looking for specific XML tags that denote the beginning and end of source segments.  It copies the text between such XML tags, sends it to the Cloud to be translated, then pastes the results back into the *.sdlxliff file.  Only 3 drawbacks with that system:</p>
+				1) Segment-by-segment translation is not possible--files can only be batch translated
+				<br>2) If any errors occur during the automatic copy-pasting process, the *.sdlxliff file gets corrupted and can no longer be opened in Trados
+				<br>3) The plugin settings (such as credentials/product key) are not saved between sessions--they have to be re-input every time
+				<p class="paragraph">These 3 points were brought to my attention after I submitted the plugin to the SDL Appstore for approval and release (in early April 2020).  Thanks to feedback and guidance (after a lot of plugin test usage) from <a href="https://multifarious.filkin.com/" target="_blank">my contact at SDL</a>, I re-made the plugin almost entirely.  Specifically, I transformed it into a "MT Provider" for use within Trados.  Basically, this means that it becomes just like the Google API translate function that is included by default in Trados.  You can translate segment-by-segment (or in batch), and settings are saved between sessions.  Most reassuringly, the plugin no longer reads and messes with the XML tags in the *.sdlxliff files, so file corruption is a thing of the past.  Here is a screenshot of the plugin in its new form:</p>
+				<img src="{{url_for('static', filename='img/MTProvider.jpg')}}">
+				<p class="paragraph">The new version of the plugin is currently in the process of being approved for release in the SDL Appstore.  I'll post again with an update when I hear the verdict.
+		<br>
+	  </div>
+	  
+	  
+	  
+	  <div class="post" id="3202020_text">
+		<h1 class="heading-1">A 10-page "Style Guide" for a 3-sentence translation request?</h1>
+			<h2 class="heading-2">March 20th, 2020</h2>
+				<p class="paragraph">So, my commute to work takes about 45 minutes, one way.  For 35 of those minutes, I stand compactly in a crowded subway car, and usually read one of my <a href="https://en.wikipedia.org/wiki/Seich%C5%8D_Matsumoto" target="_blank">Matsumoto Seicho</a> or Jun Ikeido novels.  35 minutes in the morning, and 35 minutes in the evening.  That's just over an hour of reading, every weekday.  All that reading time is fun, and all, but after about a year of it, I began to wonder if there were another, more useful way to spend my commuting time.</p>
+				<p class="paragraph">In the end, I decided that I could probably do freelance translation work during my commute.  Of course, one's range of movement is severely limited within a crowded subway car, but I figured as long as I had 1) a hard copy of whatever document I was working on and 2) a pen or pencil, I could make something work.  I created an Upwork account and profile, and applied for one of the first jobs I found--a gig translating Japanese newspaper articles into English, for distribution/consumption in India, of all places.</p>
+				<p class="paragraph">By the way, Upwork (if you haven't heard of it) is an online marketplace, of sorts, where people or companies post job offers, and other people respond to those job offers, <b>setting their own per-hour wage</b>.  Due to the fact that anyone can post job offers, the jobs available can be quite absurd.  Seriously, I found a job posted by someone a few months ago that was like, "I can't read the address on this postcard I have, can someone decipher it for me?  My budget is $5."  Also, due to the fact that workers set their own wages (and the wages being set for each particular job are kept secret), everyone has a tendency to work for less money than they would otherwise. Finally, because it's all online and more or less instantaneous, you also have this feeling like you have to respond immediately and affirmatively if some potential employer happens to send you a job offer ('cause there are probably hundreds of other Upwork users with the same skills as you, waiting in the wings).  <b>Now that I think about it</b>, it has all the negative (or, from the point of view of an economy based on consumption, <em>positive</em> I suppose) points that eBay has.  When you buy stuff in an auction-type environment such as eBay, <b>a fear of being outbid drives you to complete the buying process in less time, and with less thought, than you normally would</b>.  Just the same, when you search for work in an auction-type environment such as Upwork, a fear of being <b>underbid</b> drives you to complete the job search process more quickly and casually than you would have otherwise.  The bottom line being, when I found this job translating Japanese newspaper articles into English for the Indian market, I was like "Yes, I can translate for 5 cents per character (about 1/3rd the industry standard)!  Yes, while riding a subway, using a paper and pencil!  I'll do it!"  It was a snap decision--the sort of snap decision eBay, Upwork and the like are apt to cause--made while typing messages back and forth to my future potential boss via a small chat window in my web browser.</p>
+				<p class="paragraph">Anyway, after agreeing to take the job, I was sent a Style Guide, to be used and referred to during translation.  It was seriously five or six pages long, and full of rules regarding translation.  I was also sent my first translation assignment, which was 2 pages of newspaper headlines and short articles.  It was then that I thought, <em>"Why should I have to read (<b>and internalize</b>) a six-page style guide, just to translate a two-page document?"</em>  The style guide wasn't full of the sort of information that could be easily internalized, either, as it had very specific rules regarding dozens of special words used in the newspaper articles.  It was the kind of style guide you'd have to keep on hand while translating, and constantly refer to.  Referring to a bulky style guide.  Standing in a subway car.  Working for 5 cents per character (which comes out to about $8 per hour, based on my translation speed).</p>
+				<p class="paragraph">In the end, I didn't end up taking this job (I was evidently underbid by someone, and communication with my future boss ended as suddenly as it had begun).  However, this experience with the crazy style guide got me thinking, "Wouldn't it be great to embed style-related comments into a translation source document, <em>only in the places where they apply?</em>"  Well, now you can, with <a href="{{url_for('ppsg')}}" target="_blank">Pinpoint_StyleGuide</a>. It's available on the SDL Appstore, and allows you to embed style-related comments directly into Trados files.  It's free, so download and try it if you'd like!</p>
+		<br>
+	  </div>
+		
+			
+
+	  <div class="post" id="362020_text">
+		<h1 class="heading-1">Ever wanted to read & edit a *tmx file without installing a special program?</h1>
+			<h2 class="heading-2">March 6th, 2020</h2>
+				<p class="paragraph">Last week, I was asked to proofread a 10,000 segment Translation Memory file, to check it for errors in meaning (of which there are probably dozens, as my customer has been using the same translation memory for years and years, adding to it bit by bit).  The problem was, I had to proofread it on a laptop, which didn't have Trados Studio installed.  Of course, <em>if you have Trados Studio installed</em>, Translation Memory files are easy to read and browse--using the "Translation Memories" view in Trados.  If you don't have Trados (or some third-party software installed), you can't very well--as a human--read these *.sdltm files.</p>
+				<p class="paragraph">My bright idea was to <b>export the translation memory file as a *.tmx file</b>, then use the "Find and Replace" function in Notepad to find all of the non-important elements and delete them.  As you will know if you've ever looked into the innards of a *.tmx (Translation Memory Exchange) file, the <b>non-important elements make up about 90% of the file</b>.  It's a mess of xml tags, time-codes, and strings of numbers.  Using my special "Find and replace via Notepad" idea, it took me about an hour to clean up the *.tmx file to the point where it contained only the source and target sentence pairs.  "Surely, there must be an app for this" I thought.</p>
+				<p class="paragraph">Searching online, I found precious litte in the way of *.tmx-file reading options.  There are programs, of course, you can download and install.  But how about a <em>web-based, one-click TMX file viewing/editing service?</em>  There are currently no options, for that.  So, in a few spare hours I had between translation projects today, I built an online TMX editor.  It's available to use on this very website, <a href="{{url_for('tmx_to_chart')}}" target="_blank">over here</a>.  You simply copy-paste the contents of a *.tmx file into a text box and click a button, and a source-target HTML chart is generated, right within the web browser!  You can edit the segments within the chart itself, then turn the file back into a *.tmx file. Hope you like it, please give it a try!</p>
+		<br>
+	  </div>
+
+
+	 
+	  <div class="post" id="2192020_text">
+		<h1 class="heading-1">Google Auto ML: Why would I need a custom model?</h1>
+			<h2 class="heading-2">Feb. 19th, 2020</h2>
+				<p class="paragraph">With the release of Google Translate V3, some months ago, it became possible to <span style="color:darkgreen;font-weight:bold">"create your own, custom translation models so that translation queries return results specific to your domain"</span> (that's copy-pasted from <a href="https://cloud.google.com/translate/automl/docs/" target="_blank">the Auto ML documentation from Google</a>).  A very true statement about a very amazing technology--Google Auto ML <b>can</b>, in fact, "return results specific to your domain."  However, what does that even <em>mean?</em>  What are these "results specific to your domain," and how do they differ from results returned using the standard model available for anyone to use at  https://translate.google.com?  In what situations is it preferable to use a custom model?  This blog post was written in hopes to shed some light on those questions.</p>
+				<b>Translation Domains</b>
+				<p class="paragraph">What is this word "your domain" in the Google Auto ML documentation?  Simply put, it means something akin to "field" or "industry."  For example, I translate machine manuals, so my "domain" would be <em>technical</em>.  A translator who translates law-related documents--their domain would be <em>legal</em>.  A translator working with farming and farm equipment-related documents would be working in the <em>agricultural</em> domain.  So basically, the Google Auto ML documentation is saying that training and using a custom model will <span style="color:darkgreen;font-weight:bold">return results specific to the industry in which you are translating</span>.  For example, if you put type the French phrase <b>"certificat d'urbanisme"</b> into https://translate.google.com, it comes back as <b>"planning certificate."</b>  But if you train a custom model using sentence pairs taken from FR->EN translated <em>real estate and construction documents</em>, that very same phrase--when translated with your custom model--would very likely come back as <b>"zoning certificate"</b> or something like that.</p>
+				<b>Isn't a glossary enough?</b>
+				<p class="paragraph">So, you may be thinking <em>"If I just want to Google Translate to return 'zoning certificate' when I input 'certificat d'urbanisme', isn't a glossary sufficient?"</em>  The answer is yes, 100%.  In the vast majority of cases, use of a glossary alters the results from Google Translate enough that they become specific to your domain.  If you simply want to use specific nouns in the translations, using a glossary is a perfect solution.  In the course of my own technical translation work, there often appears the air conditioner-related word 'ベンチエール', which Google Translate (by default) always translates as "bench ale."  In actuality, it should be translated as "HRV" (a domain-specific word), so I always use a glossary with Google Translate to make sure the translation results are "specific to my domain," as it were.</p>
+				<b>Need you a custom model, truly?</b>
+				<p class="paragraph">In most cases, <b>using a glossary to assign specific nouns to be used within the translation is more than enough</b> to cause Google Translate to return results specific to your industry or field.  If you, for some reason, need to <b>change the basic structure of sentences to make them align with your industry or field, then you'd need to use a custom model</b>.  For example, imagine that you translate questionnaires from Japanese into English for a living.  But NOW imagine (who knows why) the English versions need to use medieval-style English. Something like this:</p>
+				ペットを飼っていますか？ --> Have you any pets?
+				<br>あなたの家に何人が住んでいますか？ --> Be there how many people living in your house?
+				<br>最近映画を見ましたか？ --> Seen you any movies lately?
+				<p class="paragraph">If you copy-paste the Japanese on the left into https://translate.google.com, it returns very grammatically-standard English sentences.  None of the "verb + subject + object" structure you need for your job translating questionnaires into medieval-style English, unfortunately.  No matter what you do, the standard Google Translate <em>will never, ever return a "verb + subject + object" structure interrogative sentence</em>.  Google has trained the standard model on modern English, so it can only return modern-sounding sentences.  If you needed Google Translate to return sentences with a medieval-style grammatical structure, then you'd need to train a custom model (using sentence pairs such as the three above).  After enough training, the model would begin producing this grammatical structure very consistently.</p>
+				<p class="paragraph">To summarize, Google Translate V3 offers users the ability to both use glossaries while translating as well as use custom models.  If you only need to use specific nouns in your translation (ones that would not be returned reliably by the standard Google Translate model), then you should use a glossary.  If you need to change the entire structure of the sentences in your translation, then you should train and use a custom model.  For most translators' needs, glossaries are enough.  However, if you somehow get a great high-paying gig translating scripts for <a href="https://www.medievaltimes.com/" target="_blank">Medieval Times</a> or something, by all means train yourself a custom model!</p>
+				<p class="paragraph">As you may know, using <a href="{{url_for('gcwg')}}" target="_blank">GoogleCloud'n Glossary</a>, a plugin for Trados Studio 2017 and 2019 available on this site, you can batch-translate documents within Trados Studio 2017 or 2019, via the Google API, using a glossary, or even using custom models (which you can train using the sentence pairs within existing Trados Studio translation memories).  Please check it out, and download it!</p>
+		<br>
+	  </div>	  
+	  
+ 
+	  
+	  <div class="post" id="262020_text">
+		<h1 class="heading-1">GoogleCloud'n Glossary: An example</h1>
+			<h2 class="heading-2">Feb. 6th, 2020</h2>
+				<p class="paragraph">So, you may have heard that version 3 of the Google Translate API has been released!  It offers the ability to translate while following the terms laid out in a glossary.  That is pretty amazing.  I <em>have</em> built my own simple recurrent neural network for language detection, just as a hobby, so I know a little bit about artificial neural networks and the technology behind machine translation.  That being said, I have <em>no idea</em> how Google is able to deliver machine translated content that contains certain user-defined terms!  It's amazing, and will go a long, long way toward <em>eliminating the slog and repetitive boredom from the post-editing process</em>.</p>
+				<p class="paragraph">As outlined in the "Machine Translation to the rescue" post below, I recently used <a href="{{url_for('gcwg')}}" target="_blank">GoogleCloud'n Glossary</a> to batch translate a 250-page specs manual that would have otherwise been immensely boring and drawn-out.  Machine translation (via the Google API) was placed automatically into my Trados project file, using the terms designated in a termbase that I selected.  To someone who's worked with the Google API in it's version 2 form, it is quite a surprise, this new glossary-functionality.  The video below shows a comparison between using the Google API function built into Trados 2017 and 2019 and using the "GoogleCloud'n Glossary" plugin.(<b>Be sure to turn on closed captions, as the video has no audio narration</b>):</p>
+				<div class="rule rule-2">
+				  <hr>
+				</div>
+				<br><iframe width="560" height="315" src="https://www.youtube.com/embed/0tCBraa3BMo" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+				<div class="rule rule-2">
+				  <hr>
+				</div>
+				<p class="paragraph">The "GoogleCloud'n Glossary" plugin was developed through the end of 2019, and version 1 was finished just a few weeks ago, in late January 2020.  It's still pending approval from the SDL Appstore, but you can download an 'unsigned' version here on the website.  I've searched the internet using the words "Trados Studio Google API V3" and "Trados Studio Google translate glossary," et cetera, and it looks like there are <a href="https://community.sdl.com/developers-more/developers/language-developers/f/sdk_qa/26064/google-automl---anyone-working-on-a-studio-plugin" target="_blank">many translators waiting for a release of a plugin for Trados Studio which uses Google Translate API V3</a> & the wonderful glossary functionality thereof.</p>
+				<p class="paragraph">Well, peeps, it's here!  It's not perfect, but I hope to make it so in the future.  Please, download it and check it out, then email me with bug-fix requests, I would welcome them!</p>
+			
+		<br>
+	  </div>
+	  
+
+	  
+	  <div class="post" id="242020_text">
+		<h1 class="heading-1">Machine Translation to the rescue</h1>
+		<h2 class="heading-2">Feb. 4th 2020</h2>
+		  <p class="paragraph">I began  my work as a translator quite by accident.  It was 2012, and I was working in a small <em>eikaiwa</em> (English conversation school) in rural Japan.  Drawn in by the extremely reasonable lesson fee (about 1/8th of what you'd pay in a big city), a local woman who worked for a Japanese yogurt company started coming in for lessons.</p>
+
+			<p class="paragraph">Well, actually, not <em>conversation</em> lessons--what she'd actually do is bring loads of operation manuals for industrial-sized yogurt processing machines.  Her company actually produced yogurt-making and -packaging machines, and was in the process of exporting them to factories in Europe.  She and I would sit down, and she'd explain the details of how a certain component of one of the machines worked, and I would transcribe it into English.</p>
+
+			<p class="paragraph">For me (at that time only a beginner-level Japanese speaker) it was so mentally challenging to try and grasp the concepts within the manuals, and so rewarding to be able to translate them into English.  In retrospect, it was simple stuff, like "Once the bottles are filled, they pass onto CONVEYOR B," but for me, it was extremely fun and rewarding.  For her?  Well, considering the <em>market rate for per-character translation of industrial machinery</em>, all I can say is that she was saving her company quite a bit of money (possibly thousands of dollars) by outsourcing all the translation to a rural <em>eikaiwa</em>.</p>
+
+			<p class="paragraph">From that experience, I came to see the translation industry as something like <b>a linguistic gymnasium-slash-play area</b>, where I could have fun 1) grasping the general outline of the source sentence, then 2) create an approximate copy in the target language.  In the subsequent years (2014 - 2017) translating online news articles for Rosetta Stone Japan, this image did not change much.  It was fun and challenging.  1) Read the source sentence. 2) Grasp the meaning. 3) Make an English version. </p>
+
+			<p class="paragraph">Only when I entered the world of industrial equipment manual translation (starting in late 2017) did I realize <b>translation of technical documents is neither fun nor interesting, and certainly not something that humans should be put in charge of</b>, at least not 100%.  The problem is, it's extremely easy and repetitive.  Which means <em>it not only robs you of any feeling of accomplishment as a translator, but also makes you prone to errors</em> (for example, say the word for "foundation bolt" occurs 200 times in a row, then suddenly "hanging bolt" appears--will you catch it?).</p>
+
+			<p class="paragraph">This is one of the reasons I developed <a href="{{url_for('gcwg')}}" target="_blank">GoogleCloud'n Glossary</a>, one of the plugins available here on the site.  It allows you to batch-translate documents within Trados Studio 2017 or 2019, via the Google API, <em>using a glossary</em>.  I recently used it to batch translate a 250-page "Specification Manual" document, which was filled with page after page of content like:</p>
+			Flap operation: active
+			<br>Flap operation: inactive
+			<br>Operating state
+			<br>Individual setting display
+			<br>Group setting display
+			<br>Pi pin number
+			<br>Po pin number
+			<br>Active
+			<br>Inactive
+			<br>Freezing prevention OUT condition
+			<br>Freezing prevention IN condition
+			<p class="paragraph">Nearly 17,000 segments of this kind of content.  Not the kind of thing you want to put a human translator in charge of.  Sitting at a desk for hours and hours, typing <b>short strings of nouns and adjectives</b> like this, it's only a matter of time until one makes a term error.</p>
+
+			<p class="paragraph">The general-use Google API is great, but I've found it often translates "運転" as both "operation" and "driving," depending on the context.  Thanks to the glossary functionality in "GoogleCloud'n Glossary," I was able to make sure that "運転" was translated as "operation" 100% of the time across the nearly 17,000 segments, which saved a lot of post-editing work.</p>
+
+			<p class="paragraph">Of course, using machine translation...it's something that many translators find psychologically unpleasant.  Maybe you spent years and years becoming fluent in a language, maybe made 'translator' a large part of your identity; then suddenly you find that--at least when faced with strings of nouns and adjectives--the Google API can translate just as well as you (and more consistently to boot).  I can sympathize with that.  As outlined above, from 2012 until 2018, I had built up such an identity--priding myself on my ability to grasp the meaning of Japanese documents and create English equivalents.  Then the ease and repetitiveness of industrial translation drove me almost entirely out of the field.  Very little feeling of accomplishment, and a whole lot of error potential.</p>
+
+			<p class="paragraph">That being said, I still enjoy doing translation in my own head as a hobby (for example, while reading Japanese detective novels or watching TV).  Parsing the meaning of a three-or-four line sentence with multiple objects and verb clauses--it brings me back to the 'linguistic gymnasium-slash-play area' that I so enjoyed many years ago.</p>
+
+			<p class="paragraph">But 17,000 segments of strings of nouns and adjectives, like the above?  So much better to use "GoogleCloud'n Glossary!"  </p> 
+		</div>
+ 
+	  
+	  
+      <div class="post" id="1252020_text">
+      <h1 class="heading-1">Browser-<em>what?</em></h1>
+	  <h2 class="heading-2">Jan. 25th 2020</h2>
+	  <p class="paragraph">Thank you for visiting browser-beijin.com!  Regarding the URL address of this site, you are probably thinking one of the following things:</p>
+		<em>
+		1) Is this the site of a Chinese travel agency?
+		<br>2) Do they only arrange tours of Beijing?
+		<br>3) Why did they misspell 'beijing' in the url?
+		</em>
+		<p class="paragraph">You would not be blamed for thinking one (or all three) of the above.  As a company name, it's a bit confusing and, well, <em>foreign-sounding</em>.  'Why didn't they choose a general noun as a company name?' you might be wondering.</p>
+		<p class="paragraph">Have you ever wondered why "You Tube" is called "You Tube?"  Turns out, the company originally began as a dating site where users could upload videos of themselves (hence the name <em>you</em> tube) and make a profile with the aim of finding a partner.  Starting out in this direction, they evidently purchased the URL address "youtube.com," probably thinking 'This URL aligns perfectly with our business model!  Lucky!'  Then, as we all know, You Tube then went on to become a completely different kind of business. </p>
+		<p class="paragraph">Such was also the case with this company, Browser Beijin.  In early 2018, I thought <em>offering Japanese to English translation, in an online chat-room style environment, with a five-minute turnaround</em> would be a great idea.  A business with high demand, certainly.  Based on my own years of experience in the translation industry, I was accutely aware of the tight deadlines of that industry (sometimes on the order of hours), as well as the constant small revisions made to the source documents that commonly result in hundreds of dollars in extra translation costs (<b>Customer:</b> "We would like to change <em>attach the casters (4 locations)</em> to <em>attach the casters in 4 locations</em>."  <b>Translation Company:</b> "Ok, that'll be...the minimum charge, which is $45.").  Who wouldn't want translation delivered within 5 minutes of order, with <em>no minimum charge, and a per-character fee half the industry standard?!</em>, is what I thought.  So sure of my business model was I that I went and bought the domain name 'browser-beijin.com.'</p>
+		<p class="paragraph">You see, <em>Beijin</em> has the meaning of "American person" in Japanese.  The image was "Hey, there's a <em>beijin</em> (American), right there in your web browser!  <em>HE'S THERE, waiting to respond to your translation request, right in your browser!</em>"  That, everybody, is where the name "Browser-beijin" came from.  It was supposed to bring up the image of an American, native English speaker, accessible via a web browser, available at any time to take questions / translation requests.</p>
+		<p class="paragraph">Through the rest of 2018 and 2019, I stayed at my PC from 9am to 6pm, waiting for the translation requests to roll in.  None ever came, as it turns out.  However, while I was waiting, I had a lot of time to experiment with Trados Studio 2017, and learn to program in C# (the language in which Trados Studio plugins are written). In the end, I found plugin development not only more challenging and rewarding than translation, but also more in-line with the trend in the industry.  In my opinion, the industry as a whole is moving toward greater automation and precision--be that via greater & more thorough application of translation memories, more precise glossary management, or machine translation.</p>
+		<p class="paragraph">So, browser-beijin.com changed from a <b>translation business</b> to a <b>translation-related plugin development business</b>, hoping to offer plugins that will help translators be as productive as possible & deal with the changes in this ever-more-exacting industry.</p>
+	</div>
+    </article>
+
+
+    <div class="coffee-span-4 coffee-549-span-12 coffee-700-span-12">
+      <div class="container nav-container">
+        <h2 class="heading-1">Blog Posts</h2>
+		<a class="link-text nav-link" id="9012020">GoogleCloud'n Glossary approved on the SDL Appstore</a>
+		<a class="link-text nav-link" id="5202020">GoogleCloud'n Glossary: Remake!</a>
+        <a class="link-text nav-link" id="3202020">3 sentence translation request, 10-page Style Guide?</a>
+        <a class="link-text nav-link" id="362020">Edit TMX files online!</a>
+        <a class="link-text nav-link" id="2192020">Google Auto ML: Why would I need a custom model?</a>
+		<a class="link-text nav-link" id="262020">GoogleCloud'n Glossary: An example</a>
+		<a class="link-text nav-link" id="242020">Machine Translation to the rescue</a>
+		<a class="link-text nav-link" id="1252020">Browser <em>what?</em></a>
+        <div class="rule rule-2">
+          <hr>
+        </div>
+      </div>
+	  <div class="rule">
+        <hr>
+      </div>
+	  </div>
+  </main>
+  <div class="row full-width-row footer">
+    <div class="coffee-span-12">
+      <footer class="subgrid">
+        <div class="row">
+          <div class="coffee-span-3 hidden-column"></div>
+            <div class="coffee-span-9 coffee-880-span-12">
+            <a class="link-text footer-nav" href="{{url_for('index')}}">Main Page</a>
+			<a class="link-text footer-nav" href="{{url_for('blog')}}">Translation & Programming Blog</a>
+            <a class="link-text footer-nav" href="{{url_for('tbtm_align')}}">TBTM_Align</a>
+            <a class="link-text footer-nav" href="{{url_for('otf_glossary')}}">On-the-fly Glossary</a>
+            <a class="link-text footer-nav" href="{{url_for('iem')}}">Crawl'n Search</a>
+			<a class="link-text footer-nav" href="{{url_for('gcwg')}}">GoogleCloud'w Glossary</a>
+			<a class="link-text footer-nav" href="{{url_for('ppsg')}}">Pinpoint_StyleGuide</a>
+			<a class="link-text footer-nav" href="{{url_for('tmx_to_chart')}}">View and edit TMX files online</a>
+			<br>Mail:　bb@browser-beijin.com
+          </div>
+        </div>
+        <div class="row">
+          <div class="coffee-span-12">
+            <div class="rule rule-1">
+              <hr>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="coffee-span-3 hidden-column"></div>
+        </div>
+      </footer>
+    </div>
+  </div>
+</body>
+</html>

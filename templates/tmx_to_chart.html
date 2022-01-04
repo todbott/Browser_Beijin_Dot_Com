@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="generator" content="Responsive Site Designer 1.5.1419">
+  <title>Browser-beijin -- Trados Plugin Development</title>
+  <link rel="stylesheet" href="{{url_for('static', filename='css/coffeegrinder.min.css')}}">
+  <link rel="stylesheet" href="{{url_for('static', filename='css/wireframe-theme.min.css')}}">
+  <link rel="shortcut icon" type="image/x-icon" href="{{url_for('static', filename='img/favicon.ico')}}" />
+  <script>document.createElement( "picture" );</script>
+  <script src="{{url_for('static', filename='js/picturefill.min.js')}}" class="picturefill" async="async"></script>
+  <link rel="stylesheet" href="{{url_for('static', filename='css/main.css')}}">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+  
+    <script type="text/javascript" >
+	$(document).ready(function() {
+	
+			$('#next').hide();
+			$('#return').hide();
+	
+			$('#convert').click( function() {
+			
+				$('#convert').hide()
+				$('#return').show();
+
+				
+				var next_number = 1;
+				var number_of_tables = 1;
+				
+				var contents = $('#tmx_box').val();
+				var table_array = [];
+				var reconstructed_tables_array = [];
+					
+				var head_chopped_off = contents.replace(/<\?xml([\s\S]*?)<seg>/, "");
+				var h = contents.match(/(<\?xml([\s\S]*?)<seg>)/);
+				
+				var head = h[0];
+				reconstructed_tables_array.push(head);
+				
+				var almost_no_tags = head_chopped_off.replace(/<\/seg>([\s\S]*?)<seg>/g, "--segBreak--");
+				var innards = head_chopped_off.match(/(<\/seg>([\s\S]*?)<seg>)/g);
+				innards.push("");
+			
+				var t = almost_no_tags.match(/(<\/seg>([\s\S]*?)<\/tmx>)/);
+				var tail = t[0];
+				var no_tags = almost_no_tags.replace(/<\/seg>([\s\S]*?)<\/tmx>/g, "");
+
+				var array = no_tags.split("--segBreak--");
+				
+				
+
+				for (var t = 0; t < array.length; t = t + 204) 
+				{
+				
+					var currentRow, table = document.createElement("table");
+					table.style.width = "700px"
+					
+				
+					for (var i = t; i < t+204; i++) {
+						if (i >= array.length) { break;}
+						// put items in.
+						var item = document.createElement("td");
+						item.contentEditable = "true";
+						item.append(document.createTextNode(array[i]));
+
+						// every specified item
+						if (i % 2 === 0)
+							// if there is a currentRow append it
+							currentRow && table.append(currentRow),
+						currentRow = document.createElement("tr");
+						currentRow.contentEditable = "true";
+					currentRow.append(item);
+					}
+					table.append(currentRow);
+					
+					table_array.push(table);
+					
+					number_of_tables = number_of_tables + 1;
+				}
+				
+				$('div[name=tmx_area]').html(table_array[0]);
+				
+				$('#next').show();
+				if (number_of_tables == 2)
+				{
+					$('#next').hide();
+				}
+				
+				$('#next').click( function() {
+				
+					rows = document.getElementsByTagName("table")[0].rows;
+				
+					var inn = 1;
+					for (i = 0, j = rows.length; i < j; ++i) {
+						cells = rows[i].getElementsByTagName('td');
+						reconstructed_tables_array.push(cells[0].innerHTML);
+						reconstructed_tables_array.push(innards[inn-1]);
+						reconstructed_tables_array.push(cells[1].innerHTML);
+						reconstructed_tables_array.push(innards[inn]);
+						inn = inn+2;
+						};
+					
+					$('div[name=tmx_area]').html(table_array[next_number]);
+					next_number = next_number + 1;
+					
+					if (next_number == number_of_tables - 1) 
+					{
+						$('#next').hide();
+					}
+
+					
+					});
+				
+
+				$('#return').click( function() {
+				
+					$('#return').hide()
+					$('#next').hide()
+
+					if (next_number != number_of_tables - 1)
+					{
+					
+						for (var n = next_number - 1; n < number_of_tables - 1; n++)
+						{
+							$('div[name=tmx_area]').html(table_array[n]);
+							rows = document.getElementsByTagName("table")[0].rows;
+					
+							var inn = 1;
+							for (i = 0, j = rows.length; i < j; ++i) {
+								cells = rows[i].getElementsByTagName('td');
+								reconstructed_tables_array.push(cells[0].innerHTML);
+								reconstructed_tables_array.push(innards[inn-1]);
+								reconstructed_tables_array.push(cells[1].innerHTML);
+								reconstructed_tables_array.push(innards[inn]);
+								inn = inn+2;
+								};
+
+						}
+					}
+					else 
+					{
+
+						rows = document.getElementsByTagName("table")[0].rows;
+					
+						var inn = 1;
+						for (i = 0, j = rows.length; i < j; ++i) {
+							cells = rows[i].getElementsByTagName('td');
+							reconstructed_tables_array.push(cells[0].innerHTML);
+							reconstructed_tables_array.push(innards[inn-1]);
+							reconstructed_tables_array.push(cells[1].innerHTML);
+							reconstructed_tables_array.push(innards[inn]);
+							inn = inn+2;
+						};
+					}
+
+					var final_string = "";
+					for (var s = 0; s < reconstructed_tables_array.length - 1; s++)
+					{
+						final_string = final_string + reconstructed_tables_array[s]
+					}
+					final_string = final_string + tail
+					$('div[name=tmx_area]').html("<TEXTAREA name='tmx_box' rows='50' cols='100' id = 'tmx_box'>" + final_string + "</TEXTAREA>");
+				
+				});
+				
+			});
+			
+		});
+	</script>
+
+	<style>
+
+		@media all and (min-width: 960px) {
+		* {
+			font-size: 20px;
+		  }
+		}
+
+		@media all and (max-width: 959px) and (min-width: 600px) {
+		* {
+			font-size: 5vw;
+		  }
+		}
+
+		@media all and (max-width: 599px) and (min-width: 50px) {
+		* {
+			font-size: 6vw;
+		  }
+		}
+
+		table, th, td {
+		  border: 1px solid black;
+		}
+		table {
+		  border-collapse: collapse;
+		}
+		tr:hover {background-color:#f5f5f5;}
+	</style>
+</head>
+
+<body>
+  <div class="row full-width-row header">
+    <header class="coffee-span-12">
+      <div class="container header-container">
+        <h1 class="page-heading">Edit TMX files online</h1>
+        <p class="paragraph tagline">Secure right here in the browser<br>
+        </p>
+      </div>
+    </header>
+  </div>
+  <main class="row">
+    <article class="coffee-span-8 coffee-880-span-8 coffee-549-span-12 coffee-700-span-12">
+      <h1 class="heading-1">Edit and view Translation Memory Exchange files here!</h1>
+	  <p class="paragraph">Open your *.tmx file with any text editor, then copy-paste <em>all the contents</em> into the box below, then click <b>"Convert to chart"</b>.  The source-target sentence pairs in the TMX file will be placed neatly into a chart which will appear below. You can edit the source-target segments right there in the chart (<b>in 100-pair chunks</b>).  When you have completed editing, click the <b>"Re-convert to TMX"</b> button, and the contents will be re-converted to TMX format, which you can then copy-paste right back into the original *.tmx file via a text editor.</p>
+	  <p class="paragraph"><b>Security Note:</b> <em>This process takes place via JQuery, within your web browser itself, so it is 100% confidential.  The contents of your TMX file are simply parsed and put into a client-side (that's </em>your<em> side!) array, not uploaded to any server during this process.  It is a text-parsing process that uses JQuery, and occurs right within your browser.</em></p>
+	  <br><input type="button" id="convert" value="Convert to chart" />  ||  <input type="button" id="next" value="Next 100 segment pairs" />  ||  <input type="button" id="return" value="Re-convert to TMX" />
+	  <div name="tmx_area">
+		<br>
+		<TEXTAREA name="tmx_box" rows="50" cols="100" id = "tmx_box"></TEXTAREA>
+	  </div>
+        <div class="rule rule-2">
+          <hr>
+        </div>
+	  <br>
+        <div class="rule rule-2">
+          <hr>
+        </div>
+	  <br>
+		<hr>
+       <div class="rule rule-2">
+          <hr>
+        </div>
+      </div>
+    </article>
+
+
+    <div class="coffee-span-4 coffee-549-span-12 coffee-700-span-12">
+      <div class="container nav-container">
+        <h2 class="heading-1">Site Map</h2>
+        <a class="link-text nav-link" href="{{url_for('index')}}">Main Page</a>
+		<a class="link-text nav-link" href="{{url_for('blog')}}">Translation & Programming Blog</a>
+        <a class="link-text nav-link" href="{{url_for('tbtm_align')}}">TBTM_Align</a>
+        <a class="link-text nav-link" href="{{url_for('otf_glossary')}}">On-the-fly Glossary</a>
+        <a class="link-text nav-link" href="{{url_for('iem')}}">Crawl'n Search</a>
+		<a class="link-text nav-link" href="{{url_for('gcwg')}}">GoogleCloud'w Glossary</a>
+		<a class="link-text nav-link" href="{{url_for('ppsg')}}">Pinpoint_StyleGuide</a>
+		<a class="link-text nav-link" href="{{url_for('tmx_to_chart')}}">View and edit TMX files online</a>
+        <div class="rule rule-2">
+          <hr>
+        </div>
+      </div>
+	  <div class="rule">
+        <hr>
+      </div>
+	  </div>
+  </main>
+  <div class="row full-width-row footer">
+    <div class="coffee-span-12">
+      <footer class="subgrid">
+        <div class="row">
+          <div class="coffee-span-3 hidden-column"></div>
+            <div class="coffee-span-9 coffee-880-span-12">
+            <a class="link-text footer-nav" href="{{url_for('index')}}">Main Page</a>
+			<a class="link-text footer-nav" href="{{url_for('blog')}}">Translation & Programming Blog</a>
+            <a class="link-text footer-nav" href="{{url_for('tbtm_align')}}">TBTM_Align</a>
+            <a class="link-text footer-nav" href="{{url_for('otf_glossary')}}">On-the-fly Glossary</a>
+            <a class="link-text footer-nav" href="{{url_for('iem')}}">Crawl'n Search</a>
+			<a class="link-text footer-nav" href="{{url_for('gcwg')}}">GoogleCloud'w Glossary</a>
+			<a class="link-text footer-nav" href="{{url_for('ppsg')}}">Pinpoint_StyleGuide</a>
+			<a class="link-text nav-link" href="{{url_for('tmx_to_chart')}}">View and edit TMX files online</a>
+			<br>Mail:　bb@browser-beijin.com
+          </div>
+        </div>
+        <div class="row">
+          <div class="coffee-span-12">
+            <div class="rule rule-1">
+              <hr>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="coffee-span-3 hidden-column"></div>
+        </div>
+      </footer>
+    </div>
+  </div>
+</body>
+</html>

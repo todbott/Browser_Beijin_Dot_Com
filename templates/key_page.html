@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta name="generator" content="Responsive Site Designer 1.5.1419">
+		<title>SDL Trados Studio Plugin Product Keys -- Browser-beijin Plugins</title>
+		<link rel="stylesheet" href="{{url_for('static', filename='css/coffeegrinder.min.css')}}">
+		<link rel="stylesheet" href="{{url_for('static', filename='css/wireframe-theme.min.css')}}">
+		<link rel="shortcut icon" type="image/x-icon" href="{{url_for('static', filename='img/favicon.ico')}}" />
+		<script>document.createElement( "picture" );</script>
+		<script src="{{url_for('static', filename='js/picturefill.min.js')}}" class="picturefill" async="async"></script>
+		<link rel="stylesheet" href="{{url_for('static', filename='css/main.css')}}">
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+		
+		<script type="text/javascript" >
+			$(document).ready(function() {
+			
+				$('div[name=language-holder]').hide();
+				$('div[name=key-holder]').hide();
+				$('div[name=stripe-key-holder]').hide();
+				$('div[name=type-holder]').hide();
+				
+				var language = $('div[name=language-holder]').html();
+				var key = $('div[name=key-holder]').html();
+				var stripe_key = $('div[name=stripe-key-holder]').html();
+				var type = $('div[name=type-holder]').html();
+					
+				
+				
+				$('div[name=payment_form]').html("<form action='{{url_for('charge')}}' method='post'><script src='https://checkout.stripe.com/checkout.js' class='stripe-button' data-key='" + stripe_key + "' data-description='Trados Plugin Product Key'	data-amount='2500'	data-locale='auto'><\/script></form>");
+				
+				
+				
+				if (language == 'en')
+				{
+					if (type == 'tbtm')
+					{
+						$('div[name=product_key]').html("<h1 class='page-heading'>Purchase a TBTM Align Product Key</h1>");
+					}
+					if (type == 'otf')
+					{
+						$('div[name=product_key]').html("<h1 class='page-heading'>Purchase an On-the-fly Glossary Product Key</h1>");
+					}
+					if (type == 'iem')
+					{
+						$('div[name=product_key]').html("<h1 class='page-heading'>Purchase a Crawl'n Search Product Key</h1>");
+					}
+					if (type == 'gcwg')
+					{
+						$('div[name=product_key]').html("<h1 class='page-heading'>Purchase a GoogleCloud 'w Glossary Product Key</h1>");
+					}
+					$('div[name=subscript]').html("<p class='paragraph tagline'>SDL Trados Studio plugins by Browser-beijin</p>");
+					$('div[name=payment_info]').html("<br>To purchase an unlimited product key, make a payment of $25.00 USD using the button below.　Payment provider is <a href='https://www.stripe.com' target='_blank'>Stripe</a>, and credit card information is not kept on file.");	
+					if (key != "")
+					{
+						$('div[name=key_success_heading]').html("<h2 class='heading-1'>Product key details:</h2>");
+						$('div[name=key_info]').html("<p class='paragraph'>Your key is " + key + ".  Inputting it before using the plugin will unlock all capabilities of the plugin.<br><br><b>Thank you for your business!</b><br>");
+					}
+				}
+				if (language == 'jp')
+				{
+					if (type == 'tbtm')
+					{
+						$('div[name=product_key]').html("<h1 class='page-heading'>TBTM Align キーの購入</h1>");
+					}
+					if (type == 'otf')
+					{
+						$('div[name=product_key]').html("<h1 class='page-heading'>OTF_Glossary キーの購</h1>");
+					}
+					if (type == 'iem')
+					{
+						$('div[name=product_key]').html("<h1 class='page-heading'>Crawl'n Search キーの購</h1>");
+					}
+					if (type == 'gcwg')
+					{
+						$('div[name=product_key]').html("<h1 class='page-heading'>GoogleCloud 'w Glossary キーの購</h1>");
+					}
+					$('div[name=subscript]').html("<p class='paragraph tagline'>トラドススタジオプラグイン</p>");
+					$('div[name=payment_info]').html("<br>キーを購入仕方：下記のボタンを使って $25.00 USD をクレジットカードで払います。(支払い管理会社は<a href='https://stripe.com/jp' target='_blank'>Stripe</a>です。クレジットカード情報は弊社のサーバーに保存しません）。");	
+					if (key != "")
+					{
+						$('div[name=key_success_heading]').html("<h2 class='heading-1'>キーの詳細：</h2>");
+						$('div[name=key_info]').html("<p class='paragraph'>キーは　" + key + " です。  プラグインをご利用前に入力すれば、プラグインの全機能のご利用ができます。<br><br><b>ご購入ありがとうございます！</b><br>");
+					}
+				}
+				
+				if (language == 'es')
+				{
+					if (type == 'tbtm')
+					{
+						$('div[name=product_key]').html("<h1 class='page-heading'>Compre una clave de producto TBTM_Align</h1>");
+					}
+					if (type == 'otf')
+					{
+						$('div[name=product_key]').html("<h1 class='page-heading'>Compre una clave de producto OTF_Glossary</h1>");
+					}
+					if (type == 'iem')
+					{
+						$('div[name=product_key]').html("<h1 class='page-heading'>Compre una clave de producto Crawl'n Search</h1>");
+					}
+					if (type == 'gcwg')
+					{
+						$('div[name=product_key]').html("<h1 class='page-heading'>Compre una clave de producto GoogleCloud 'w Glossary</h1>");
+					}
+					$('div[name=subscript]').html("<p class='paragraph tagline'>Complemento SDL Trados Studio</p>");
+					$('div[name=payment_info]').html("<br>Para comprar una clave de producto ilimitada, realice un pago de $ 25.00 USD utilizando el botón a continuación. El proveedor de pagos es <a href='https://stripe.com/es' target='_blank'>Stripe</a> y la información de la tarjeta de crédito no se guarda en el archivo.");	
+					if (key != "")
+					{
+						$('div[name=key_success_heading]').html("<h2 class='heading-1'>Clave de producto:</h2>");
+						$('div[name=key_info]').html("<p class='paragraph'>Su clave es　" + key + ".  Si ingresa esta tecla antes de usar el complemento, puede usar todas las funciones.<br><br><b>¡Gracias por hacer negocios!</b><br>");
+					}
+				}
+				
+				if (language == 'fr')
+				{
+					if (type == 'tbtm')
+					{
+						$('div[name=product_key]').html("<h1 class='page-heading'>Achat d'une clé de produit TBTM Align</h1>");
+					}
+					if (type == 'otf')
+					{
+						$('div[name=product_key]').html("<h1 class='page-heading'>Achat d'une clé de produit OTF_Glossary</h1>");
+					}
+					if (type == 'iem')
+					{
+						$('div[name=product_key]').html("<h1 class='page-heading'>Achat d'une clé de produit Crawl'n Search</h1>");
+					}
+					if (type == 'gcwg')
+					{
+						$('div[name=product_key]').html("<h1 class='page-heading'>Achat d'une clé de produit GoogleCloud 'w Glossary</h1>");
+					}
+					$('div[name=subscript]').html("<p class='paragraph tagline'>Plugin SDL Trados Studio</p>");
+					$('div[name=payment_info]').html("<br>Pour acheter une clé de produit illimitée, effectuez un paiement de 25,00 USD en utilisant le bouton ci-dessous. Le fournisseur de paiement est <a href='https://stripe.com/fr' target='_blank'>Stripe</a> et les informations relatives à la carte de crédit ne sont pas conservées dans les fichiers.");	
+					if (key != "")
+					{
+						$('div[name=key_success_heading]').html("<h2 class='heading-1'>Clé de produit</h2>");
+						$('div[name=key_info]').html("<p class='paragraph'>Votre clé est　" + key + ".  Si vous entrez cette clé avant d'utiliser le plug-in, vous pouvez utiliser toutes les fonctions.<br><br><b>Merci pour votre entreprise!</b><br>");
+					}
+				}				
+				
+				if (language == 'ru')
+				{
+					if (type == 'tbtm')
+					{
+						$('div[name=product_key]').html("<h1 class='page-heading'>Купить ключ продукта TBTM Align</h1>");
+					}
+					if (type == 'otf')
+					{
+						$('div[name=product_key]').html("<h1 class='page-heading'>Купить ключ продукта OTF_Glossary</h1>");
+					}
+					if (type == 'iem')
+					{
+						$('div[name=product_key]').html("<h1 class='page-heading'>Купить ключ продукта Crawl'n Search</h1>");
+					}	
+					if (type == 'gcwg')
+					{
+						$('div[name=product_key]').html("<h1 class='page-heading'>Купить ключ продукта GoogleCloud 'w Glossary</h1>");
+					}
+					$('div[name=subscript]').html("<p class='paragraph tagline'>SDL Trados Studio плагин</p>");
+					$('div[name=payment_info]').html("<br>Чтобы приобрести неограниченный ключ продукта, внесите платеж в размере 25,00 долларов США с помощью кнопки ниже. Платежный поставщик - <a href='https://www.stripe.com' target='_blank'>Stripe</a>, и информация о кредитной карте не сохраняется в файле.");	
+					if (key != "")
+					{
+						$('div[name=key_success_heading]').html("<h2 class='heading-1'>Ключ продукта</h2>");
+						$('div[name=key_info]').html("<p class='paragraph'>Ваш ключ " + key + ".  Если вы введете эту клавишу перед использованием плагина, вы сможете использовать все функции.<br><br><b>Спасибо за ваш бизнес!</b><br>");
+					}
+				}
+				
+				if (language == 'ko')
+				{
+					if (type == 'tbtm')
+					{
+						$('div[name=product_key]').html("<h1 class='page-heading'>TBTM Align 제품 키 구입</h1>");
+					}
+					if (type == 'otf')
+					{
+						$('div[name=product_key]').html("<h1 class='page-heading'>OTF_Glossary 제품 키 구입</h1>");
+					}
+					if (type == 'iem')
+					{
+						$('div[name=product_key]').html("<h1 class='page-heading'>Crawl'n Search 제품 키 구입</h1>");
+					}
+					if (type == 'gcwg')
+					{
+						$('div[name=product_key]').html("<h1 class='page-heading'>GoogleCloud 'w Glossary 제품 키 구입</h1>");
+					}
+					$('div[name=subscript]').html("<p class='paragraph tagline'>SDL Trados Studio 플러그인</p>");
+					$('div[name=payment_info]').html("<br>무제한 제품 키를 구입하려면 아래 단추를 사용하여 $ 25.00 USD를 지불하십시오. 지불 제공자는 <a href='https://www.stripe.com' target='_blank'>Stripe</a>이며 신용 카드 정보는 파일에 보관되지 않습니다.");	
+					if (key != "")
+					{
+						$('div[name=key_success_heading]').html("<h2 class='heading-1'>제품 키 </h2>");
+						$('div[name=key_info]').html("<p class='paragraph'>귀하의 키는 " + key + " 입니다. 플러그인을 사용하기 전에이 키를 입력하면 모든 기능을 사용할 수 있습니다.<br><br><b>당신의 사업에 감사드립니다!</b><br>");
+					}
+				}
+				
+				if (language == 'de')
+				{
+					if (type == 'tbtm')
+					{
+						$('div[name=product_key]').html("<h1 class='page-heading'>Kaufen Sie einen TBTM Align Produktschlüssel</h1>");
+					}
+					if (type == 'otf')
+					{
+						$('div[name=product_key]').html("<h1 class='page-heading'>Kaufen Sie einen OTF_Glossary Produktschlüssel</h1>");
+					}
+					if (type == 'iem')
+					{
+						$('div[name=product_key]').html("<h1 class='page-heading'>Kaufen Sie einen Crawl'n Search Produktschlüssel</h1>");
+					}
+					if (type == 'gcwg')
+					{
+						$('div[name=product_key]').html("<h1 class='page-heading'>Kaufen Sie einen GoogleCloud 'w Glossary Produktschlüssel</h1>");
+					}
+					$('div[name=subscript]').html("<p class='paragraph tagline'>SDL Trados Studio-Plugin</p>");
+					$('div[name=payment_info]').html("<br>Wenn Sie einen unbegrenzten Produktschlüssel erwerben möchten, zahlen Sie mit der nachstehenden Schaltfläche 25,00 USD. Zahlungsanbieter ist <a href='https://stripe.com/de' target='_blank'>Stripe</a>, und Kreditkarteninformationen werden nicht gespeichert.");	
+					if (key != "")
+					{
+						$('div[name=key_success_heading]').html("<h2 class='heading-1'>Produktschlüssel</h2>");
+						$('div[name=key_info]').html("<p class='paragraph'>Ihr Schlüssel ist " + key + ". Wenn Sie diesen Schlüssel vor der Verwendung des Plugins eingeben, können Sie alle Funktionen nutzen.<br><br><b>Vielen Dank für Ihr Geschäft!</b><br>");
+					}
+				}
+				
+				if (language == 'zh')
+				{
+					if (type == 'tbtm')
+					{
+						$('div[name=product_key]').html("<h1 class='page-heading'>购买 TBTM Align 产品密钥</h1>");
+					}
+					if (type == 'otf')
+					{
+						$('div[name=product_key]').html("<h1 class='page-heading'>购买 OTF_Glossary 产品密钥</h1>");
+					}
+					if (type == 'iem')
+					{
+						$('div[name=product_key]').html("<h1 class='page-heading'>购买 Crawl'n Search 产品密钥</h1>");
+					}
+					if (type == 'gcwg')
+					{
+						$('div[name=product_key]').html("<h1 class='page-heading'>购买 GoogleCloud 'w Glossary 产品密钥</h1>");
+					}
+					$('div[name=subscript]').html("<p class='paragraph tagline'>SDL Trados Studio插件</p>");
+					$('div[name=payment_info]').html("<br>要购买无限产品密钥，请使用下面的按钮支付25.00美元。 付款服务提供商<a href='https://www.stripe.com' target='_blank'>Stripe</a>，信用卡信息不会存档。");	
+					if (key != "")
+					{
+						$('div[name=key_success_heading]').html("<h2 class='heading-1'>产品密钥</h2>");
+						$('div[name=key_info]').html("<p class='paragraph'>您的密钥是 " + key + "。 如果在使用插件之前输入此密钥，则可以使用所有功能。<br><br><b>感谢您的业务！</b><br>");
+					}
+				}
+				if (language == 'it')
+				{
+					if (type == 'tbtm')
+					{
+						$('div[name=product_key]').html("<h1 class='page-heading'>Acquistare un codice prodotto TBTM_Align</h1>");
+					}
+					if (type == 'otf')
+					{
+						$('div[name=product_key]').html("<h1 class='page-heading'>Acquistare un codice prodotto OTF_Glossary</h1>");
+					}
+					if (type == 'iem')
+					{
+						$('div[name=product_key]').html("<h1 class='page-heading'>Acquistare un codice prodotto Crawl'n Search</h1>");
+					}
+					if (type == 'gcwg')
+					{
+						$('div[name=product_key]').html("<h1 class='page-heading'>Acquistare un codice prodotto GoogleCloud 'w Glossary</h1>");
+					}
+					$('div[name=subscript]').html("<p class='paragraph tagline'>Plugin SDL Trados Studio</p>");
+					$('div[name=payment_info]').html("<br>Per acquistare un codice prodotto illimitato, effettua un pagamento di $ 25,00 USD utilizzando il pulsante sottostante. Il provider di pagamento è <a href='https://stripe.com/it' target='_blank'>Stripe</a> e i dati della carta di credito non vengono archiviati.");	
+					if (key != "")
+					{
+						$('div[name=key_success_heading]').html("<h2 class='heading-1'>Il tuo codice prodotto</h2>");
+						$('div[name=key_info]').html("<p class='paragraph'>La tua chiave è " + key + ". Inserendo il plug-in prima di utilizzare il plug-in si sbloccherà capacità di editing illimitate.<br><br><b>Grazie per il tuo business!</b><br>");
+					}
+				}
+			})
+		</script>
+		
+	  <style>
+		@media all and (min-width: 960px) {
+		* {
+			font-size: 20px;
+		  }
+		}
+
+		@media all and (max-width: 959px) and (min-width: 600px) {
+		* {
+			font-size: 5vw;
+		  }
+		}
+
+		@media all and (max-width: 599px) and (min-width: 50px) {
+		* {
+			font-size: 6vw;
+		  }
+		}
+		</style>
+	</head>
+
+	<body>
+	
+		<div name="language-holder">{{language}}</div>
+		<div name="key-holder">{{key}}</div>
+		<div name="stripe-key-holder">{{stripe_key}}</div>
+		<div name="type-holder">{{key_type}}</div>
+	
+		<div class="row full-width-row header">
+			<header class="coffee-span-12">
+				<div class="container header-container">
+
+
+					<div name='product_key'></div>
+					<div name='subscript'></div>
+					
+
+				</div>
+			</header>
+		</div>
+		
+		
+		<main class="row">
+			<nav class="coffee-span-3 coffee-880-span-12 nav-column">
+				<div class="container nav-container">
+
+					<div name='payment_info'></div>
+					<div name='payment_form'></div>
+					<div class="rule rule-2">
+						<hr>
+					</div>
+				</div>
+			</nav>
+			
+			
+			<article class="coffee-span-5 coffee-880-span-8 coffee-549-span-12 coffee-700-span-12">
+			
+			
+				<div name='key_success_heading'></div>
+				<div name='key_info'></div>
+
+			</article>
+		</main>
+	</body>
+</html>
